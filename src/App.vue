@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import ToggleMode from './components/ui/ToggleMode.vue'
 </script>
 
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">
-      Hello World
-    </h1>
-  </div>
+  <main class="flex items-center justify-center h-screen">
+    <ToggleMode />
+  </main>
 </template>
