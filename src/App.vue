@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import ToggleMode from './components/ui/ToggleMode.vue'
+import AppHeader from './components/AppHeader.vue'
 </script>
 
 <template>
-  <main class="flex items-center justify-center h-screen">
-    <ToggleMode />
-  </main>
+  <div class="max-w-[600px] mx-auto">
+    <AppHeader />
+
+    <main>
+      <h1>Hey, I'm Lucas</h1>
+    </main>
+  </div>
 </template>

@@ -2,8 +2,8 @@
 import type { Transition } from 'motion-v'
 import { useDark, useToggle } from '@vueuse/core'
 import { AnimatePresence, motion } from 'motion-v'
-import Moon from '~icons/lucide/moon-star'
-import Sun from '~icons/lucide/sun'
+import Moon from '~icons/carbon/moon'
+import Sun from '~icons/carbon/sun'
 import Button from '@/components/ui/Button.vue'
 
 const isDark = useDark()
@@ -11,18 +11,19 @@ const toggleDark = useToggle(isDark)
 
 const variants = {
   visible: { opacity: 1, scale: 1, filter: 'blur(0)' },
-  hidden: { opacity: 0, scale: 0.5, filter: 'blur(4px)' },
+  hidden: { opacity: 0, scale: 0.25, filter: 'blur(4px)' },
 }
 
 const transition: Transition = {
-  duration: 0.1,
-  ease: 'easeOut',
+  type: 'spring',
+  duration: 0.3,
+  bounce: 0,
 }
 </script>
 
 <template>
-  <Button size="icon" variant="outline" @click="toggleDark()">
-    <AnimatePresence :initial="false" mode="wait">
+  <Button size="icon" variant="ghost" aria-label="Toggle dark mode" @click="toggleDark()">
+    <AnimatePresence mode="popLayout" :initial="false">
       <motion.div
         v-if="isDark"
         key="sun"
